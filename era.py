@@ -22,15 +22,15 @@ GIPHY_API_KEY = "dc6zaTOxFJmzC"
 async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='for ~help', type=2))
-        await asyncio.sleep(20)
+        await asyncio.sleep(4)
         await client.change_presence(game=discord.Game(name='for ~help2', type=2))
-        await asyncio.sleep(20)
+        await asyncio.sleep(4)
         await client.change_presence(game=discord.Game(name='for ~help3', type=2))
-        await asyncio.sleep(20)
+        await asyncio.sleep(4)
+         await client.change_presence(game=discord.Game(name='https://discord.io/GCOFFICIAL', type=3))
+        await asyncio.sleep(4)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
-        await asyncio.sleep(20)
-        await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
-        await asyncio.sleep(20)
+        await asyncio.sleep(4)
         
 
 
@@ -39,11 +39,11 @@ async def on_ready():
      print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
      print('the bot is ready')
      print('.......')
-     print('created by harshit and mridul and bluebird')
+     print('created by Technical Hackz')
      client.loop.create_task(status_task())
 
 def is_owner(ctx):
-     return ctx.message.author.id in ["455322915471097857","479599725553778698","497374295299850240"]
+     return ctx.message.author.id in [":"]
 
 
 
@@ -962,9 +962,9 @@ async def remind(ctx, time=None, *,remind=None):
 
 @client.command(pass_context=True)
 async def ownerinfo(ctx):
-    embed = discord.Embed(title="Information about owner", description="Main Creator: harshit", color=0x00ff00)
-    embed.set_author(name=" Bot Owner ""mridul")
-    embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
+    embed = discord.Embed(title="Information about owner", description="Main Creator: Technical Hackz", color=0x00ff00)
+    embed.set_author(name=" Bot Owner ""Mr.Whitehat")
+    embed.add_field(name="owner: Tachnical Hackz ", value="He coded the bot")
     await client.say(embed=embed)
 
       
