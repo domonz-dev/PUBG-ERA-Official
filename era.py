@@ -963,7 +963,7 @@ async def remind(ctx, time=None, *,remind=None):
 @client.command(pass_context=True)
 async def ownerinfo(ctx):
     embed = discord.Embed(title="Information about owner", description="Main Creator: Technical Hackz", color=0x00ff00)
-    embed.set_author(name=" Bot Owner ""Mr.Whitehat")
+    embed.set_author(name=" Bot Owner : Mr.Whitehat")
     embed.add_field(name="server links: https://discord.gg/s8TTzqg ", value="Official discord server")
     await client.say(embed=embed)
 
