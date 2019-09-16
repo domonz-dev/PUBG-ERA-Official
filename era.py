@@ -139,16 +139,15 @@ async def unlock(ctx, channelname: discord.Channel=None):
             await client.say("Channel unlocked by: {}".format(ctx.message.author))
 
 @client.command(pass_context = True)
-async def dm(ctx, user: discord.Member, *, msg: str):
-   if user is None or msg is None:
-       await client.say('Invalid args. Use this command like: ``~dm @user message``')
-   if ctx.message.author.server_permissions.kick_members == False:
-       await client.say('**You do not have permission to use this command**')
-       return
-   else:
-       await client.send_message(user, msg)
-       await client.delete_message(ctx.message)
-       await client.say("Success! Your DM has made it! :white_check_mark: ")
+async def dm(ctx, member : discord.Member = None, *, message):
+    if not ctx.message.author.server_permissions.administrator:
+        return
+    if not member:
+        return await client.say(ctx.message.author.mention + "Specify a user to DM!")
+    if member = "@everyone":
+        member = 
+    else:
+        await client.send_message(member, message)
 @client.command(pass_context = True)
 async def setw(ctx):
     if ctx.message.author.bot:
