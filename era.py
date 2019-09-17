@@ -141,7 +141,7 @@ async def unlock(ctx, channelname: discord.Channel=None):
 @client.command(pass_context = True)
 async def dm(ctx, user: discord.Member, *, msg: str):
    if user is None or msg is None:
-       await client.say('Invalid args. Use this command like: ``~dm @user message``')
+       await client.say('Invalid args. Use this command like: ``~dm @user <message>``')
    if ctx.message.author.server_permissions.kick_members == False:
        await client.say('**You do not have permission to use this command**')
        return
