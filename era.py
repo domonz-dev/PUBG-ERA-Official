@@ -27,8 +27,8 @@ async def status_task():
         await asyncio.sleep(6)
         await client.change_presence(game=discord.Game(name='for ~help3', type=2))
         await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name='https://discord.io/gcommunity', type=2))
-        await asyncio.sleep(10)
+        await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
+        await asyncio.sleep(6)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
         await asyncio.sleep(6)
         
