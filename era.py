@@ -1003,7 +1003,7 @@ async def help(ctx):
     embed.add_field(name = 'flipcoin', value ='flip a coin',inline = False)
     embed.add_field(name = 'unmute', value ='unmute a user',inline = False)
     await client.send_message(author,embed=embed)
-    await client.say('📨 Check DMs For Information and do ~help2 for other commands help')
+    await client.say('📨 Check DMs For Commands.Use `~help2` For Next Commands')
 @client.command(pass_context = True)
 async def help2(ctx):
     author = ctx.message.author
