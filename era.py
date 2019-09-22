@@ -468,14 +468,14 @@ async def avatar(ctx, user: discord.Member=None):
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(ctx.message.author.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/543012294926401551/c14c14ca9d5f334e5c97751ba2fa1cec.webp?size=1024')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/473690789801885696/625263651514875927/39ad36d526a4de123b79f5266e53c44c.webp')
         embed.set_image(url = ctx.message.author.avatar_url)
         await client.say(embed=embed)
     else:
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(user.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/543012294926401551/c14c14ca9d5f334e5c97751ba2fa1cec.webp?size=1024')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/473690789801885696/625263651514875927/39ad36d526a4de123b79f5266e53c44c.webp')
         embed.set_image(url = user.avatar_url)
         await client.say(embed=embed)
 
