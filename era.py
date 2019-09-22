@@ -148,7 +148,7 @@ async def dm(ctx, user: discord.Member, *, msg: str):
    else:
        await client.send_message(user, msg)
        await client.delete_message(ctx.message)
-       await client.say("Success! Your DM has made it! :white_check_mark: ")
+       await client.say("Done! DM has been sent :white_check_mark: ")
 @client.command(pass_context = True)
 async def setw(ctx):
     if ctx.message.author.bot:
