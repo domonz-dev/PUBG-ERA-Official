@@ -976,7 +976,7 @@ async def help(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
-    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
+    embed.set_image(url = 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjzw-3GvOjkAhXTF3IKHTJyCJMQjRx6BAgBEAQ&url=https%3A%2F%2Fgiphy.com%2Fstickers%2Fhelp-K9svE9i7P3Ox2&psig=AOvVaw3uEk71k9TXGs4RNnqJ42Fl&ust=1569380600301571')
     embed.add_field(name = 'ping', value ='ping is a common command of bots',inline = False)
     embed.add_field(name = 'jointest ',value ='a test for the welcomer feature',inline = False)
     embed.add_field(name = 'servers ',value ='command for only the devs of the bot',inline = False)
