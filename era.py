@@ -21,11 +21,11 @@ GIPHY_API_KEY = "dc6zaTOxFJmzC"
 
 async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='for ~help', type=2))
+        await client.change_presence(game=discord.Game(name='~help', type=2))
         await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name='for ~help2', type=2))
+        await client.change_presence(game=discord.Game(name='~help2', type=2))
         await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name='for ~help3', type=2))
+        await client.change_presence(game=discord.Game(name='~help3', type=2))
         await asyncio.sleep(6)
         await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
         await asyncio.sleep(6)
@@ -1044,6 +1044,7 @@ async def help3(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
+    embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
     embed.add_field(name = 'ownerinfo', value ='see the bots owner info',inline = False)
