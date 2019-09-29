@@ -21,16 +21,16 @@ GIPHY_API_KEY = "dc6zaTOxFJmzC"
 
 async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='~help', type=2))
-        await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name='~help2', type=2))
-        await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name='~help3', type=2))
-        await asyncio.sleep(6)
-        await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
-        await asyncio.sleep(6)
+        await client.change_presence(game=discord.Game(name='for ~help', type=2))
+        await asyncio.sleep(20)
+        await client.change_presence(game=discord.Game(name='for ~help2', type=2))
+        await asyncio.sleep(20)
+        await client.change_presence(game=discord.Game(name='for ~help3', type=2))
+        await asyncio.sleep(20)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
-        await asyncio.sleep(6)
+        await asyncio.sleep(20)
+        await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
+        await asyncio.sleep(20)
         
 
 
@@ -39,11 +39,11 @@ async def on_ready():
      print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
      print('the bot is ready')
      print('.......')
-     print('created by Technical Hackz')
+     print('created by harshit and mridul and bluebird')
      client.loop.create_task(status_task())
 
 def is_owner(ctx):
-     return ctx.message.author.id in ["471342304158941195"]
+     return ctx.message.author.id in ["455322915471097857","479599725553778698","497374295299850240"]
 
 
 
@@ -141,14 +141,14 @@ async def unlock(ctx, channelname: discord.Channel=None):
 @client.command(pass_context = True)
 async def dm(ctx, user: discord.Member, *, msg: str):
    if user is None or msg is None:
-       await client.say('Invalid args. Use this command like: ``~dm @user <message>``')
+       await client.say('Invalid args. Use this command like: ``~dm @user message``')
    if ctx.message.author.server_permissions.kick_members == False:
        await client.say('**You do not have permission to use this command**')
        return
    else:
        await client.send_message(user, msg)
        await client.delete_message(ctx.message)
-       await client.say("Done! DM has been sent :white_check_mark: ")
+       await client.say("Success! Your DM has made it! :white_check_mark: ")
 @client.command(pass_context = True)
 async def setw(ctx):
     if ctx.message.author.bot:
@@ -468,14 +468,14 @@ async def avatar(ctx, user: discord.Member=None):
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(ctx.message.author.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/473690789801885696/625263651514875927/39ad36d526a4de123b79f5266e53c44c.webp')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/543012294926401551/c14c14ca9d5f334e5c97751ba2fa1cec.webp?size=1024')
         embed.set_image(url = ctx.message.author.avatar_url)
         await client.say(embed=embed)
     else:
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(user.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/473690789801885696/625263651514875927/39ad36d526a4de123b79f5266e53c44c.webp')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/543012294926401551/c14c14ca9d5f334e5c97751ba2fa1cec.webp?size=1024')
         embed.set_image(url = user.avatar_url)
         await client.say(embed=embed)
 
@@ -962,9 +962,9 @@ async def remind(ctx, time=None, *,remind=None):
 
 @client.command(pass_context=True)
 async def ownerinfo(ctx):
-    embed = discord.Embed(title="Information about owner", description="Main Creator: Technical Hackz", color=0x00ff00)
-    embed.set_author(name=" Bot Owner : Mr.Whitehat")
-    embed.add_field(name="server links: https://discord.gg/s8TTzqg ", value="Official discord server")
+    embed = discord.Embed(title="Information about owner", description="Main Creator: harshit", color=0x00ff00)
+    embed.set_author(name=" Bot Owner ""Harshit")
+    embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
     await client.say(embed=embed)
 
       
@@ -976,7 +976,7 @@ async def help(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
-    embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
     embed.add_field(name = 'ping', value ='ping is a common command of bots',inline = False)
     embed.add_field(name = 'jointest ',value ='a test for the welcomer feature',inline = False)
     embed.add_field(name = 'servers ',value ='command for only the devs of the bot',inline = False)
@@ -1003,14 +1003,14 @@ async def help(ctx):
     embed.add_field(name = 'flipcoin', value ='flip a coin',inline = False)
     embed.add_field(name = 'unmute', value ='unmute a user',inline = False)
     await client.send_message(author,embed=embed)
-    await client.say('📨 Check DMs For Commands.Use `~help2` For Next Commands')
+    await client.say('📨 Check DMs For Information and do ~help2 for other commands help')
 @client.command(pass_context = True)
 async def help2(ctx):
     author = ctx.message.author
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
-    embed.set_author(name='Help')
-    embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')   
+    embed.set_author(name='Help2')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')    
     embed.add_field(name = 'access', value ='acces a member',inline = False)
     embed.add_field(name = 'setpartner', value ='setup partner',inline = False)
     embed.add_field(name = 'partner', value ='partner',inline = False)
@@ -1044,7 +1044,7 @@ async def help3(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
-    embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')    
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
     embed.add_field(name = 'ownerinfo', value ='see the bots owner info',inline = False)
