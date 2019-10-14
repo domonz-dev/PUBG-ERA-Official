@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 
-TOKEN = "user token"
+TOKEN = "NTE3MzEwNjQyNjg5MTQ2ODkz.XaSYiw.COpQSKmBWLis5SKOTO95TYso-vA"
 BOT_PREFIX = ("&")
 bot = commands.Bot(command_prefix=BOT_PREFIX, description='Hi')
 
